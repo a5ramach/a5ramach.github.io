@@ -1,0 +1,147 @@
+\documentclass[addpoints,12pt,A4]{exam}
+
+\printanswers
+
+\title{Convex Optimization: Problem Set 1}
+
+\input{ExSetup}
+
+\begin{document}
+\maketitle
+
+Some problems borrowed from Optimization course of Daniel Dadush. 
+
+\begin{questions}
+
+
+ \question
+Recall the definition of convex hull:
+\[ \text{conv}(S) := \bigg\{ \sum_{i=1}^{N} \lambda_{i} \vx_{i} \mid \vx_{i} \in S, \lambda \geq 0, \sum_{i=1}^{N} \lambda_{i} = 1 \bigg\} . \]
+ 
+ \begin{enumerate}
+ \item Prove that $\text{conv}(S) = \cap_{K \supseteq S} K$ where the intersection is over all closed convex $K$ containing $S$. Therefore $\text{conv}(S)$ is the smallest convex set containing $S$. 
+
+ \item Prove Jensen's inequality: for convex $f : \R^{n} \to \R$ and input $\vx = \sum_{i=1}^{N} \lambda_{i} \vx_{i}$ where $\lambda_{i} \geq 0, \sum_{i=1}^{N} \lambda_{i} = 1$
+ \[ f(\vx) \leq \sum_{i=1}^{N} \lambda_{i} f(\vx_{i}) .   \]
+ 
+ \item Show that if $\CC\subseteq\R^n$ is a compact convex set and $f:\R^n\to\R$ is a convex function then the {\bf supremum} of $f$ over $\CC$ is attained at an extreme point of $\CC$.
+ \end{enumerate}
+
+  \begin{solution}
+  \begin{enumerate}
+      \item 
+      \item 
+      \item 
+  \end{enumerate}
+  \end{solution}
+
+
+  \question
+Describe the set of boundary points for the following norm balls, i.e. points not in the interior. For each boundary point $\vx$ give the set of supporting hyperplanes at $\vx$. 
+\begin{enumerate}
+\item $B_1^n := \{\vx \in \R^n: \|\vx\|_1 := \sum_{i=1}^n |x_i| \leq 1\}$ 
+\item $B_2^n := \{\vx \in \R^n: \|\vx\|_2 := \sqrt{\sum_{i=1}^n x_i^2} \leq 1\}$
+\item $B_\infty^n := \{\vx \in \R^n: \|\vx\|_\infty := \max_{i \in [n]} |x_i| \leq 1\}$.
+\end{enumerate} 
+
+\begin{solution}
+\begin{enumerate}
+    \item 
+    \item 
+    \item 
+\end{enumerate}
+\end{solution}
+
+
+
+
+
+\question
+For convex closed $f : \R^{n} \to \R$ and $x \in \text{dom}(f)$:
+\begin{itemize}
+    \item Show for any subgradient $g \in \partial f(x)$, $(g, -1)$ gives a \emph{supporting hyperplane} at $(x,f(x))$ for the epigraph
+    \[ \text{epi}(f) := \{ (x, t) \mid f(x) \leq t \} .   \]
+    \item Show that $g \in \partial f(x)$ gives a \emph{supporting hyperplane} at $x$ for the sub-level set
+\[ L := \{ y \in \R^{n} \mid f(y) \leq f(x) \} .   \]
+\end{itemize}
+
+\begin{solution}
+
+\end{solution}
+
+
+\question
+Prove Exercise 2.27 in [BV]: Let $K \subseteq \R^{n}$ be closed, bounded, with non-empty interior, such that there exists a supporting hyperplane of $K$ at every point of the boundary $x \in \partial K$. Show this implies $K$ is convex. 
+
+\begin{solution}
+
+\end{solution}
+
+
+\question
+Affine and quadratic functions are the most basic convex functions. We will prove some properties about them:
+\begin{itemize}
+    \item Show $h : \R^{n} \to \R$ is convex \emph{and} concave (i.e. $h$ is convex and $-h$ is convex) iff $h$ is an affine function, i.e. $h(x) = \langle a, x \rangle + b$ for $a \in \R^{n}, b \in \R$.
+    
+    \item Let $\tilde{q}(x) := \langle x, Q x \rangle + \langle a, x \rangle + b$ for symmetric matrix $Q \in \R^{n \times n}, a \in \R^{n}, b \in \R$. Show $\tilde{q}$ is convex iff $q(x) := \langle x, Q x \rangle$ is convex. (Hint: use first part)
+    
+    \item Show $q(x) = \langle x, Q x \rangle$ is convex iff 
+    \[ \forall v \in \R^{n}: \quad \langle v, Q v \rangle \geq 0 ,   \]
+    and similarly show it is strictly convex iff the inequality is strict. 
+    \\ (These conditions are known as positive-semi-definiteness and positive-definiteness, and are denoted $Q \succeq 0, Q \succ 0$.)
+
+    \item Find the optimizer and optimum value of strictly convex quadratic
+    \[ \tilde{q}(x) := \langle x, Q x \rangle + \langle a, x \rangle + b .  \]
+\end{itemize}
+
+\begin{solution}
+
+\end{solution}
+
+
+\question
+An Ellipsoid is an affine image of the Euclidean ball
+    \[ \mathcal{E} = c + A B_{2}^{n} \quad \text{where} \quad B_{2}^{n} := \{ x \in \R^{n} \mid \|x\|_{2} \leq 1\}  , \]
+    for some $c \in \R^{n}$ and $A \in \R^{n \times n}$ invertible.
+    \begin{itemize}
+    \item Let $q(x) := \langle x, Q x \rangle + \langle d, x \rangle + e$ be \emph{strictly convex}. Show any sub-level set
+    \[ L_{t} := \{ x \in \R^{n} \mid q(x) \leq t \}  \]
+    is either empty or an Ellipsoid (i.e. find $c,A$ such that $L_{t} = c + A B_{2}$). 
+
+    \item Conversely, given Ellipsoid $\mathcal{E} = c + A B_{2}$ as above, find convex quadratic $q(x) := \langle x, Q x \rangle + \langle d, x \rangle + e$ such that 
+    \[ \mathcal{E} = \{ x \in \R^{n} \mid q(x) \leq 1 \} .   \]
+    
+\end{itemize}
+
+\begin{solution}
+
+\end{solution}
+
+
+\question
+Recall the GLS oracle model for convex sets. Let $f : \R^{n} \to \R$ be a convex closed function with $\text{dom}(f) = \R^{n}$. We investigate natural function oracles in terms of the epigraph:
+\begin{itemize}
+    \item Show MEM$(\text{epi}(f))$ can be implemented using an EVALuation oracle for $f$; show EVAL$(f)$ can be approximately implemented using MEM$(\text{epi})$, i.e. for input $x \in \R^{n}$ compute $t \in \R$ such that $|t - f(x)| \leq \eps$. 
+
+    \item Show SEP$(\text{epi}(f))$ can be implemented using an GRADient (or subgradient) oracle for $f$; show GRAD$(f)$ can be approximately implemented using SEP$(\text{epi}(f))$, i.e. for input $x \in \R^{n}$ compute $g \in \R^{n}$ such that 
+    \[ \forall y \in \R^{n} : f(y) \geq f(x) - \eps + \langle g, y - x \rangle . \]
+
+    \item Relate OPT$(\text{epi}(f))$ and EVAL and GRAD for the Fenchel dual defined as
+    \[ f^{*}(w) := \sup_{x \in \R^{n}} \langle w, x \rangle - f(x) . \]
+
+    \item Relate MEM, SEP for $\text{epi}(f^{*})$ with VAL, VIOL for $\text{epi}(f)$. Note the relation does not need to be exact.  
+\end{itemize}
+
+\begin{solution}
+
+\end{solution}
+
+
+
+
+
+
+
+
+\end{questions}
+\end{document}
