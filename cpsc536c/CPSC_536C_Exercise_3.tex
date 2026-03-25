@@ -1,0 +1,95 @@
+\documentclass[addpoints,12pt,A4]{exam}
+
+\printanswers
+
+\title{Continuous Optimization: Problem Set 3}
+
+\input{ExSetup}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\question Recall the definition of $\alpha$-self-concordance and barrier parameter $\theta$:
+\[ \forall u,v,w: | D^{3} \phi(x) [u,v,w] | \leq \frac{2}{\sqrt{\alpha}} \|u \|_{x} \|v\|_{x} \|w\|_{x}   , \qquad \theta := \sup_{x \in D} \|(\nabla^{2}\phi(x) )^{-1}\nabla \phi(x)\|_{x} .  \]
+\begin{enumerate}
+    \item Assume $\phi_{k}$ are each $\alpha_{k}$-self-concordant with barrier parameter $\theta_{k}$ for domain $D$. Compute the self-concordance and barrier parameter for $\sum_{k} \phi_{k}$. 
+    \item Show $- \log \det(X)$ is self-concordant for $D := \{ X \succ 0 \}$, and compute its barrier parameter. 
+\end{enumerate}
+\begin{solution}
+    
+\end{solution}
+
+
+
+\question (Theorem 4.1.3 in Nesterov) We made the assumption that $\nabla^{2} \succ 0$ everywhere. In this question we remove the assumption. Show if there is some direction such that $\langle v, \nabla^{2} \phi(x) v \rangle = 0$ and $\phi$ is \emph{self-concordant}, then in fact 
+\[ \forall y \in \text{dom}(\phi) : \langle v, \nabla^{2} \phi(y) v \rangle = 0 .   \]
+What does this say about the domain in this direction?
+\begin{solution}
+    
+\end{solution}
+
+
+
+\question 
+\begin{enumerate}
+    \item Prove affine invariance of the Newton step: for convex $f$ let $g(y) := f(A y)$ so for $y = A^{-1} x$ $g(y) = f(x)$. Compute the gradient and Hessian and Newton step and show $y_{t+1} = A^{-1} x_{t+1}$ if $y_{t} = A^{-1} x_{t}$. 
+    \item Prove affine invariance of the definition of self-concordance and barrier parameter. 
+\end{enumerate}
+\begin{solution}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{solution}
+
+
+
+\question (Exercise 9.10 in BV): Newton's method with fixed step size $\lambda=1$ can diverge if the
+initial point is not close to $x^{*}$. In this problem we consider two examples. 
+\begin{itemize}
+\item[a.] $f(x) = \log(e^{x} + e^{-x})$ has unique minimizer $x^{*} = 0$. Run Newton's method with
+fixed step size $t=1$, starting at $x^{0} = 1$ and at $x^{0} = 1.1$. 
+
+
+\item[b.] $f(x) = - \log(x) + x$ has unique minimizer $x^{*} = 1$. Run Newton's method with fixed
+step size $\lambda=1$, starting at $x^{0} = 3$. 
+\end{itemize}
+\begin{solution}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    
+\end{solution}
+
+
+
+\question (Daniel Dadush Course, Ex 9.11)
+Let $\MA \in \R^{m \times n}$, ${\rm rank}(\MA)=m$, $\vc \in \R^n$, $\vb \in \R^m$. 
+For $\mu > 0$, examine the optimization problems
+\begin{align}
+\tag{BP} \label{barrier-primal}
+\min_{\vx} &\{\vc \Tr \vx - \mu \sum_{i=1}^n \ln x_i: \MA \vx = \vb, \vx > 0 \} \\
+\tag{BD} \label{barrier-dual}
+\max_{\vs,\vy} &\{\vb \Tr \vy + \mu \sum_{i=1}^n \ln s_i: \MA \Tr \vy + \vs = \vc, \vs > 0\}. 
+\end{align}
+Assume that the feasible regions for both programs are non-empty (i.e., the
+primal and dual LPs are both strictly feasible).
+\begin{enumerate}
+\item Show that the Lagrangian dual of~\ref{barrier-primal} is equivalent
+to~\ref{barrier-dual} and prove that strong duality holds.
+\item Conclude that $\vx_\mu$ is an optimal to solution to~\eqref{barrier-primal}
+iff $\exists$ a solution $\vs_\mu, \vy_\mu$ to~\eqref{barrier-dual}
+satisfying $x_{\mu,i} s_{\mu,i} = \mu$, $\forall i \in [n]$.
+\end{enumerate}
+\begin{solution}
+    
+\end{solution}
+
+
+    
+\end{questions}
+
+
+\end{document}
