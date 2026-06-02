@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPSC 536C — Algorithms for Convex Optimization</title>
+  <style>
+    body {
+      max-width: 800px;
+      margin: 40px auto;
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 0 15px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    a {
+      color: #0055aa;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>CPSC 536C: Algorithms for Convex Optimization</h1>
+<p><strong>Instructor:</strong> <a href="https://a5ramach.github.io/">Akshay Ramachandran</a></p>
+<p><strong>Term:</strong> Winter II, 2025</p>
+
+<div class="section">
+  <h2>Course Description</h2>
+  <p>
+    We will cover the fundamental algorithms used for efficient convex optimization, with a focus on rigorous convergence analysis. 
+    At the end, you should have an understanding of why convex optimization algorithms work, and be able to effectively apply these tools to your own research. 
+    This course will be different from and complementary to CPSC 536M taught by Michael Friedlander in Term 1. 
+  </p>
+</div>
+
+<div class="section">
+  <h2>Lectures</h2>
+  <p>MW 12:30-2pm in DMP 201</p>
+</div>
+
+<div class="section">
+  <h2>Resources</h2>
+  <ul>
+    <li><a href="CPSC_536C_Syllabus.pdf">Syllabus</a></li>
+    <li><a href="CPSC_536C_Student_Lec_Schedule.pdf">Student Lectures and Projects</a> Due: April 18, 2026</li>
+    <li>Office Hours: Friday 1-2pm in ICICS X453</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Schedule</h2>
+  <table>
+    <tr><th>Date</th><th>Topic</th><th>Notes</th></tr>
+    <tr><td>Week 1</td><td>Introduction</td><td>-</td></tr>
+    <tr><td>Week 2-3</td><td>Convex sets and functions</td><td><a href="CPSC_536C_Convex_Fund_4.pdf">Notes (prelim)</a></td></tr>
+    <tr><td>Week 3</td><td>Cutting Plane Methods</td><td><a href="CPSC_536C_Cutting_Planes_3.pdf">Notes (prelim)</a></td></tr>
+    <tr><td>Week 4</td><td>Convex Programming Duality and John's Ellipsoid</td><td><a href="CPSC_536C_Convex_Program_2.pdf">Notes (prelim)</a></td></tr>
+    <tr><td>Week 5-6</td><td>Gradient Descent</td><td><a href="CPSC_536C_Grad_Descent_4.pdf">Notes (prelim)</a></td></tr>
+    <tr><td>February 9</td><td>Student Lecture: Kevin K Thomas - Stochastic Gradient Descent</td><td><a href="scribe/SGD_Notes.pdf">Notes</a> (Scribe: Arqam Patel)</td></tr>
+    <tr><td>Week 7</td><td>Reading Week</td><td>—</td></tr>
+    <tr><td>February 23</td><td>Guest Lecture: Chen Greif - Conjugate Gradient</td><td><a href="scribe/Conjugate_Gradient_Method.pdf">Notes</a> (Scribe: Kevin K Thomas)</td></tr>
+    <tr><td>February 25</td><td>Student Lecture: Hasti Karimi - Min Cut</td><td><a href="scribe/MinCut_scribe.pdf">Notes</a> (Scribe: Mitali Nanda)</td></tr>
+    <tr><td>March 2</td><td>Student Lecture: Tong Ling - Spectral Sparsification</td><td><a href="scribe/Spectral_Sparsification.pdf">Notes</a> (Scribe: Vasiliki Mavrogeorgou)</td></tr>
+    <tr><td>Week 8-9</td><td>Mirror Descent</td><td><a href="CPSC_536C_Mirror_Descent_2.pdf">Notes (prelim)</a></td></tr>
+    <tr><td>March 4</td><td>Student Lecture: Inzaghi Moniaga, Yin Huang - Multiplicative Weights Method</td><td><a href="scribe/mwu_scribe.pdf">Notes</a> (Scribe: Tong Ling)</td></tr>
+    <tr><td>March 11</td><td>Student Lecture: Trevor Tidy - Accelerated Gradient Descent</td><td><a href="scribe/Accelerated_GD.pdf">Notes</a> (Scribe: Hasti Karimi)</td></tr>
+    <tr><td>March 18</td><td>Student Lecture: Ying Qi Wen - Spectral Descent</td><td><a href="scribe/Spectral_Descent.pdf">Notes</a> (Scribe: Yin Huang, Inzaghi Moniaga)</td></tr>
+    <tr><td>Week 10-12</td><td>Interior Point Methods</td><td><a href="CPSC_536C_IPM_2.pdf">Notes (prelim)</a></td></tr>
+    <tr><td>March 30</td><td>Student Lecture: Yixian Huang - Universal Barrier</td><td><a href="scribe/universal_barrier.pdf">Notes</a> (Scribe: Ying Qi Wen)</td></tr>
+    <tr><td>April 8</td><td>Student Lecture: Vasiliki Mavrogeorgou and Mitali Nanda - Game Theory and Minimax Theorems</td><td><a href="scribe/Minimax_Theorem.pdf">Notes</a> (Scribe: Trevor Tidy)</td></tr>
+    <tr><td>April 15</td><td>Student Lecture: Arqam Patel - Efficient Convex Optimization with Membership Oracles</td><td><a href="scribe/MEMtoSEP_scribe.pdf">Notes</a> (Scribe: Yixian Huang)</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Assignments</h2>
+  <ul>
+    <li>Setup tex File (<a href="CPSC_536C_Ex_Setup.tex">tex</a>)</li>
+    <li>Problem Set 1 (<a href="CPSC_536C_Exercise_1v6.pdf">pdf</a>, <a href="CPSC_536C_Exercise_1v6.tex">tex</a>);
+    Due: February 13, 2026, Solutions (<a href="CPSC_536C_Exercise_1_soln2.pdf">pdf</a>)</li>
+    <li>Problem Set 2 (<a href="CPSC_536C_Exercise_2v1.pdf">pdf</a>, <a href="CPSC_536C_Exercise_2v1.tex">tex</a>);
+    Due: March 17, 2026, Solutions (<a href="CPSC_536C_Exercise_2_soln1.pdf">pdf</a>) </li>
+    <li>Problem Set 3 (<a href="CPSC_536C_Exercise_3.pdf">pdf</a>, <a href="CPSC_536C_Exercise_3.tex">tex</a>);
+    Due: April 10, 2026, Solutions  (<a href="CPSC_536C_Exercise_3_soln1.pdf">pdf</a>) </li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>References</h2>
+  <ul>
+    <li>Rockafellar — <em>Convex Analysis</em></li>
+    <li>Boyd & Vandenberghe — <em>Convex Optimization</em></li>
+    <li>Nesterov and Nemirovski— <em>Interior Point Polynomial Methods in Convex Programming</em></li>
+    <li>Nesterov — <em>Introductory Lectures on Convex Optimization</em></li>
+    <li>Bubeck - Convex Optimization</li>
+    <li>Bubeck - <a href="http://sbubeck.com/BubeckLectureNotes.pdf">Introduction to Online Optimization</a></li>
+    <li>Lap Chi Lau - <a href="https://cs.uwaterloo.ca/~lapchi/cs798/">Convexity and Optimization</a></li>
+    <li>Yao-Liang Yu - <a href="https://cs.uwaterloo.ca/~y328yu/teaching/794/">Optimization for Data Science</a></li>
+  </ul>
+</div>
+
+<footer style="margin-top:40px; font-size:0.9em; color:#666;">
+  Page design inspired by Michael Friedlander.
+</footer>  
+</body>
+</html>
