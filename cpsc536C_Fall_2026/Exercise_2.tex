@@ -1,0 +1,84 @@
+\documentclass[addpoints,12pt,A4]{exam}
+
+\printanswers
+
+\title{Continuous Optimization: Problem Set 2}
+
+\input{ExSetup}
+
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+ \question
+ Recall the definitions of $\alpha$-strong convexity and $\beta$-smoothness: for all $x,y$
+ \[ \frac{\alpha}{2} \|y - x\|_{2}^{2} \leq f(y) - f(x) - \langle \nabla f(x), y - x \rangle \leq \frac{\beta}{2} \|y - x\|_{2}^{2} .   \]
+ We will examine equivalent $1$-st and $2$-nd order definitions of these properties. For this question, assume $f$ is twice continuously differentiable. 
+ \begin{enumerate}
+    \item Show if $f : \R^{n} \to \R$ is $\alpha$-strongly convex or $\beta$-smooth, then the restriction $g(t) := f(x + t v)$ is $\alpha \|v\|_{2}^{2}$-strongly convex and $\beta \|v\|_{2}^{2}$-smooth for any $x, v \in \R^{n}$;
+     \item Show $\alpha$-strong convexity and $\beta$-smoothness are equivalent to the conditions $\alpha I \preceq \nabla^{2} f(x)$ and $\nabla^{2} f(x) \preceq \beta I$, respectively. (Here the notation $A \succeq B$ means $A - B \succeq 0$ or equivalently $\forall v: \langle v, A v \rangle \geq \langle v, B v \rangle$)
+     \item Show for an $\alpha$-strongly convex function, we have distance bound on the optimizer
+     \[ \|x - x^{*}\|_{2} \lesssim \frac{\|\nabla f(x)\|_{2}}{\alpha} .  \]     
+     \item Show $\beta$-smoothness is equivalent to Lipschitz-ness of the \emph{gradient}:
+     \[ \forall x,y : \quad \|\nabla f(y) - \nabla f(x)\|_{2} \leq \beta \|y - x\|_{2} .   \]
+     (You can use the following fact without proof: $0 \preceq H \preceq \beta I \iff \forall x: \|H x\|_{2} \leq \beta \|x\|_{2} \iff \forall x,y: |\langle x, H y \rangle| \leq \beta \|x\|_{2} \|y\|_{2}$)
+ \end{enumerate}
+ \begin{solution}
+\end{solution}
+
+ \question
+ In the analysis of gradient descent for strongly convex and smooth functions we used the following crucial claim, known as the Polyak-Lojaseiwicz inequality (PL):
+ \[ \|\nabla f(x)\|_{2}^{2} \gtrsim \alpha (f(x) - f(x^{*})) ,    \]
+ where $x^{*}$ is the optimizer. 
+     \begin{enumerate}
+     \item  Show that $\alpha$-strong convexity implies this $\alpha$-PL condition. 
+     \item Show the same exponential convergence of gradient descent for $\alpha$-strongly convex and $\beta$-smooth $f$, but replace the strong convexity condition with $\alpha$-PL condition.  
+     \item Find a function that satisfies $\alpha=1$ PL condition but is not $\eps$-strongly convex for any $\eps > 0$. (Hint: consider convex quadratics.) 
+     \item \textbf{Remark}: this condition even allows rigorous fast convergence analyses for certain non-convex functions!
+     % \item (Difficult): Consider gradient flow: $\partial_{t} x_{t} := - \nabla f(x_{t})$. Show the PL-condition implies exponential convergence of this process, even without smoothness.  
+ \end{enumerate}
+ \begin{solution}
+ \end{solution}
+
+ 
+
+\question
+You can use the following lemma without proof in this question: for convex $\ell$ and convex differentiable $r$, let $f := \ell + r$ with $x_{*} = \arg\min f$. Then 
+\[ f(x) = \ell(x) + r(x) \geq f(x_{*}) + D_{r}(x,x_{*}) = \ell(x_{*}) + r(x_{*}) + D_{r}(x,x_{*}) .    \]
+\begin{enumerate}
+\item Prove the Bregman Pythagorean result: for strictly convex $r : \R^{n} \to \R$, let $\Pi_{K}(x) := \arg\min_{z \in K} D_{r}(z,x)$, then 
+\[ \forall z \in K: \quad D_{r}(z, x) \geq D_{r}(\Pi(x), x) + D_{r}(z, \Pi(x)) .    \]
+\item Let $f(z) := D_{r}(z,x)$, then $D_{f} = D_{r}$, i.e. 
+\[ D_{f}(z,y) = D_{r}(z,x) - D_{r}(y,x) - \langle \nabla r(y) - \nabla r(x), z - y \rangle = D_{r}(z,y) .   \]
+% \item Duality: $D_{\phi}(y,x) = D_{\phi^{*}}(\nabla \phi(x), \nabla \phi(y))$
+\end{enumerate} 
+
+\begin{solution}
+\end{solution}
+
+
+
+
+\question (Lap Chi Lau Course CS798, HW2 Q1)
+Suppose you are given an `accelerated' algorithm $\mathcal{A}$ for minimizing strongly convex and smooth functions: given $f$ that is $\alpha$-strongly convex and $\beta$-smooth, the algorithm outputs $x_{\text{alg}}$ satisfying $f(x_{\text{alg}}) - f(x^{*}) \leq \eps$ in 
+\[ T \lesssim \sqrt{ \frac{\beta}{\alpha}} \cdot  \log \bigg( \frac{f(x_{0}) - f(x^{*})}{\eps} \bigg) \]
+iteration, where $x^{*} = \arg\min_{x} f(x)$ (unknown), and $x_{0}$ is the initial point. 
+
+\begin{itemize}
+    \item You would like to use algorithm $\mathcal{A}$, but apply it to $f$ that is \emph{not strongly convex}. Prove that you can still use $\mathcal{A}$ as a black box to give an `accelerated' algorithm with the following guarantee: for convex $f$ that is $\beta$-smooth and minimizer $x^{*} = \arg\min_{x} f(x)$, find output $x$ such that $f(x) - f(x^{*}) \leq \eps$ in 
+    \[ T \lesssim \sqrt{\frac{\beta \|x_{0} - x^{*}\|_{2}^{2}}{\eps}} \cdot \log \bigg( \frac{f(x_{0}) - f(x^{*})}{\eps} \bigg)   \]
+    iterations, where again $x_{0}$ is the initial point. 
+    You are allowed to assume that you know the values $\|x_{0} - x^{*}\|_{2}$ and $f(x_{0}) - f(x^{*})$. 
+
+    \item Use this to derive the lower-bound for first-order methods for smooth convex functions via the lower-bound for smooth and strongly convex functions. 
+\end{itemize}
+\begin{solution}
+    
+\end{solution}
+
+
+
+\end{questions}
+\end{document}
